@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+ <head>
+	<title>Feedback</title>
+	<link rel="stylesheet" href="style.css">
+ <body>
+	<script src="form.js"></script>
+ <div id="container">
+	 
+	 <main>
+	 <h2>Feeback</h2>
+	 <h3>Love something? Hate something? Let us know!</h3>
+		 Note : Fields marked with an asterisk(*) are mandatory
+		 <br><br>
+		 <form  id="myform" method="post" novalidate>
+			<label>Title*:</label>
+			<input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
+			<input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
+			<input type="radio" name="title" id="mrs" value="mrs" required="required"/>Mrs.
+			<br><br>
+			<label for="firstName">First Name*:</label>
+			<input type="text" name="firstName" required="required" id="firstName" placeholder="First Name" onblur="validatedata(this,1,'FName')"/>	
+			<br><br>
+			<div id="errorMsgFirstName" style="display:none;color:red">
+				Invalid First Name. Please enter only text
+			</div>
+			
+
+			<label for="lastName">Last Name*:</label>
+			<input type="text" name="lastName" id="lastName" required="required" placeholder="Last Name" onblur="validatedata(this,1,'LName')"/>
+			<br><br>
+			<div id="errorMsgLastName" style="display:none;color:red">
+				Invalid Last Name. Please enter only text
+			</div>
+			
+
+			<label for="emailId">Email Id*:</label>
+			<input type="text" name="emailId" id="emailId" required="required" placeholder="name@northeastern.edu" onblur="validatedata(this,3)"/>
+			<br><br>
+			<div id="errorMsgEmail" style="display:none;color:red">
+				Invalid EmailAddress Please enter a Valid Email Address.<Address></Address>
+			</div>
+			
+
+			<label for="phoneNumber">Phone Number*:</label>
+			<input type="text" name="phoneNumber" id="phoneNumber" required="required" placeholder="xxx-xxx-xxxx" onblur="validatedata(this,4)"/>
+			<br><br>
+			<div id="errorMsgPhone" style="display:none;color:red">
+				Invalid Phone Number Please Enter a Valid Phone Number.
+			</div>
+			
+			<label for="streetAddress1">Street Address 1*:</label>
+			<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" />
+			<div id="errorMsgAdd" style="display:none;color:red">
+				Invalid address Please enter a Valid Address.
+			</div>
+			<br><br>
+
+			<label for="streetAddress2">Street Address 2:</label>
+			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
+			<br><br>
+
+            <label for="zipcode">ZipCode*:</label>
+			<input type="text" name="zipcode" id="zipcode" required="required" placeholder="xxxxxx" onblur="validatedata(this,5)" />
+			<br><br>
+			<div id="errorMsgZip" style="display:none;color:red">
+				Invalid ZipCode Please enter a Valid ZipCode
+			</div>
+             
+            <label for="zipcode">How did you hear*:</label>
+			<input type='checkbox' name="source" value="facebook" /> Facebook
+            <input type='checkbox' name="source" value="google" /> Google
+            <input type='checkbox' name="source" value="yelp" /> Yelp 
+			<br><br> 
+             
+			<label for="comments">Comments*:</label>
+			<textarea name="text" required="required" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
+			<br><br>
+
+			<label for="drinks">Drinks*:</label>
+			<select name="drinks" id="drinks" onchange="showText()">
+				<option value="default" selected>Select an option</option>
+  				<option value="Black Tea">Black tea</option>
+  				<option value="Cold coffee">Cold coffee</option>
+  				<option value="Lemon Ice Tea">Lemon Ice Ice </option>
+  				<option value="Espresso">Espresso</option>
+				<option value="none">None</option>
+			</select>
+			
+			<br><br>
+
+
+			<div id="selectionbody">
+			<label for="source1" id="source1" class="selection"> Hot Black Tea- Large ($1 extra)</label>
+			<input type="checkbox" id="drinks11" name="source100" value="Black Tea" class="selection" onchange="showDetails(this, id)"><br>			
+
+			<label for="source2" id="source2" class="selection"> Mocha Shot Cold Coffee - Large ($1.5 extra)</label>
+  			<input type="checkbox" class="selection" id="drinks22" name="source100" value="Medium Cold Coffee" onchange="showDetails(this, id)"> <br>
+
+			<label for="source3" id="source3" class="selection"> Mint flavour Lemon Ice Tea- Large ($1 extra)</label>  
+  			<input type="checkbox" class="selection" id="drinks33" name="source100" value="Lemon Ice Tea" onchange="showDetails(this, id)"><br>
+			
+			<label for="source4" id="source4"class="selection"> Espresso- Large ($1 extra)</label>  
+  			<input type="checkbox" class="selection" id="drinks44" name="source100" value="Espresso" onchange="showDetails(this, id)"><br>
+			
+			<label for="comments1" id="comments11" class="selection">Comments on the selected item*:</label>
+			<textarea name="text1"  class ="selection" id="comments1" placeholder="You can additional comments for selected product" rows="5" cols="25"></textarea>
+		    
+  			<br><br>
+			</div>
+
+			<input type="button" name="Submit" value="Submit" onclick="getTableData()">
+			<input type="Reset">
+			<br><br>
+			
+		 </form>
+		 <div class="container">
+			<table id="userTable">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Full Name</th>
+					
+						<th>Phone Number</th>
+						<th>Street Address1</th>
+						<th>Street Address2</th>
+						<th>Email ID</th>
+						<th>ZipCode</th>
+						<th>Heard From</th>
+						<th>Comments</th>
+						<th>Drinks</th>
+						<th>Drink Type</th>
+						<th>Comments</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				
+			</table>
+		</div>
+	 </main>
+ </div>
+
+ <script>
+	 
+ 
+ </script>
+
+
+
+
+ </body>
+</html>
